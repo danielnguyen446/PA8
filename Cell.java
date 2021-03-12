@@ -24,6 +24,8 @@ public abstract class Cell implements Comparable <Cell>
     /**
      * This constructor initializes all instance variables
      * Sets all negative values to zero
+     * 
+     * @param currRow, currCol, mass
      */
     public Cell(int currRow, int currCol, int mass)
     {
@@ -58,6 +60,8 @@ public abstract class Cell implements Comparable <Cell>
     /**
      * This copy constructor initializes all instance variables by
      * using the getter methods.
+     * 
+     * @param otherCell
      */
     public Cell(Cell otherCell)
     {
@@ -78,6 +82,8 @@ public abstract class Cell implements Comparable <Cell>
     
     /**
      * This method returns the value of currRow
+     * 
+     * @return currRow
      */
     public int getCurrRow()
     {
@@ -86,6 +92,8 @@ public abstract class Cell implements Comparable <Cell>
     
     /**
      * This method returns the value of currCol
+     * 
+     * @return currCol
      */
     public int getCurrCol()
     {
@@ -94,6 +102,8 @@ public abstract class Cell implements Comparable <Cell>
     
     /**
      * This method returns the value of mass
+     * 
+     * @return mass
      */
     public int getMass()
     {
@@ -103,6 +113,7 @@ public abstract class Cell implements Comparable <Cell>
     /**
      * This setter class is a mutator that sets current row to the new row
      * 
+     * @param newRow
      * @return true if successfully set
      */
     public boolean setCurrRow(int newRow)
@@ -121,6 +132,7 @@ public abstract class Cell implements Comparable <Cell>
     /**
      * This setter class is a mutator that sets current column to new column
      * 
+     * @param newCol
      * @return true if successfully set
      */
     public boolean setCurrCol(int newCol)
@@ -139,6 +151,7 @@ public abstract class Cell implements Comparable <Cell>
     /**
      * This setter class is a mutator that sets current mass to new mass
      * 
+     * @param newMass
      * @return true if successfully set
      */
     public boolean setMass(int newMass)
@@ -156,11 +169,16 @@ public abstract class Cell implements Comparable <Cell>
     
     /**
      * This method checks if the cell should initiate apoptosis or not.
+     * 
+     * @param cell list neighbors
      */
     public abstract boolean checkApoptosis(List<Cell> neighbors);
     
     /**
      * Determines which cell has larger mass
+     * 
+     * @param otherCell
+     * @return whether this cell has larger mass than otherCell
      */
     public int compareTo(Cell otherCell)
     {
