@@ -161,7 +161,7 @@ public class PetriDish
      */
     public void move()
     {
-        int [] location;   //array to hold location
+        int [] location = new int[locArSize];   //array to hold location
         
         Cell[][] newDish = new Cell[dish.length][dish[0].length];
         
@@ -169,7 +169,7 @@ public class PetriDish
         {
             Cell movingCell = (Cell) movables.get(i); //create a cell object
             
-            location = movingCell.getMove(); //call getMove
+            /*location = movingCell.getMove(); //call getMove*/
             
             //account for wrapping row
             if(location[0]<0)
@@ -255,8 +255,8 @@ public class PetriDish
      */
     public void divide()
     {
-       	int [] location;   //array to hold location
-       	int [] ogLocation;  //remember old cell's location
+       	int [] location = new int[locArSize];   //array to hold location
+       	int [] ogLocation = new int[locArSize];  //remember old cell's location
         
         Cell[][] newDish = new Cell[dish.length][dish[0].length];
         
@@ -265,7 +265,7 @@ public class PetriDish
             Cell ogCell =(Cell) divisibles.get(i);  //remember the old cell
             Cell dividingCell = (Cell) divisibles.get(i); //create a cell
             
-            location = dividingCell.getDivision(); //call getDivision
+            /*location = dividingCell.getDivision(); //call getDivision*/
             
             //remember the original cell's location
             ogLocation[0] = ogCell.currRow;
